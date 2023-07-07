@@ -11,19 +11,23 @@ Data must be filtered in order to:
   ●   examine the protocols that are used when the user makes the connection to the website, and <br />
   ●   analyze some of the data packets to identify the type of information sent and received by the systems that connect to each other when the network data is captured. <br />
 
+<br />
+<br />
+
+
 <h2>Explore Data With Wireshark</h2>
   In this step, a network packet capture file that contains data captured from a system that made web requests to a site must be opened. This will be done with Wireshark to get an overview of how the data is presented in the application.
-[insert picture]
+<img src="https://i.imgur.com/bf7FKzn.png" height="80%" alt="Explore data with wireshark"/>
 
 <br />
 <br />
 
 <h2>Apply a Wireshark Filter and Inspect a Packet</h2>
 In this step, Wireshark is used to open a packet for more detailed exploration and filter the data to inspect the network layers and protocols contained in the packet.
-[insert picture]
+<img src="https://i.imgur.com/dza2iln.png" height="80%" alt="Apply a Wireshark Filter and Inspect a Packet 1"/>
 In this scenario, we will analyze the first packet that lists TCP as the protocol. Each subtree listed is
 opened and viewed to gain different information in regards to the packet.
-[insert picture]
+<img src="https://i.imgur.com/VZusQIY.png" height="80%" alt="Apply a Wireshark Filter and Inspect a Packet 2"/>
 After analyzing this packet, we return to the main tree.
 
 <br />
@@ -35,9 +39,9 @@ packets came from or where they were sent to. Packets will be selected using eit
 their physical Ethernet Media Access Control (MAC) address or their Internet Protocol
 (IP) address. <br />
 Examples of used filters and their results may be seen below:
-[insert picture]
-[insert]
-[inse]
+<img src="https://i.imgur.com/575W4Sm.png" height="80%" alt="Use Filters to Select Packets 1"/>
+<img src="https://i.imgur.com/zYJjp7m.png" height="80%" alt="Use Filters to Select Packets 2"/>
+<img src="https://i.imgur.com/otdP8Xf.png" height="80%" alt="Use Filters to Select Packets 3"/>
 
 <br />
 <br />
@@ -50,9 +54,9 @@ are being looked up) and answers (IP addresses that are being sent back by a DNS
 server when a name is successfully resolved). <br />
 DNS traffic uses UDP port 53, so we will use this port to list traffic related only to DNS
 queries and responses. 
-[insert picture]
+<img src="https://i.imgur.com/vvl5ynW.png" height="80%" alt="Use Filters to Explore DNS Packets 1"/>
 We then view and confirm the queried website of the first packet listed.
-[insert picture]
+<img src="https://i.imgur.com/OdnawRv.png" height="80%" alt="Use Filters to Explore DNS Packets 2"/>
 Here we see that the website queried was (opensource.google.com).
 
 <br />
@@ -64,14 +68,19 @@ is present in payload data contained inside network packets will be used to sear
 will locate packets based on something such as a name or some other text that is of
 interest. <br />
 In this case, we’ll search for the web traffic port 80.
-[insert picture]
+<img src="https://i.imgur.com/Bp4TmJR.png" height="80%" alt="Use Filters to Explore TCP Packets 1"/>
 We will select the first packet in the list to analyze. The destination IP of this packet is
 169.254.169.254 
 <br />
 Conducting a quick analysis, you can see that the Frame Length (as specified in the Frame
 subtree) is 54 bytes. The Time to Live, Frame Length, and Destination Address (all found within
 the IPV4 subtree) are ‘64’, ‘54 bytes’, and ‘169.254.1.139’ respectively.
-[insert picture]
+<img src="https://i.imgur.com/z5FdN7Y.png" height="80%" alt="Use Filters to Explore TCP Packets 2"/>
 Finally, we conduct one last search filter to select TCP packet data that contains specific text
 data.
-[insert picture]
+<img src="https://i.imgur.com/dgWmFYb.png" height="80%" alt="Use Filters to Explore TCP Packets 3"/>
+
+<br />
+<br />
+
+<h5>End of Project</h5>
